@@ -37,3 +37,9 @@ Route::get('/clip', function () {
 Route::get('/fullscreen', function () {
     return view('fullscreeen');
 })->name('fullscreeen');
+Route::get('/online_offline', function () {
+    return view('online_offline');
+})->name('online_offline');
+Route::get('/bluetooth', function () {
+    return view('bluetooth');
+})->name('bluetooth');
