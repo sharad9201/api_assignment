@@ -34,3 +34,6 @@ Route::get('/geolocation', function () {
 Route::get('/clip', function () {
     return view('clip');
 })->name('clip');
+Route::get('/fullscreen', function () {
+    return view('fullscreeen');
+})->name('fullscreeen');

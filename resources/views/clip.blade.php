@@ -9,24 +9,17 @@
 </head>
 
 <body>
-    <img src="https://cdn.dribbble.com/users/2769276/screenshots/9515081/__2x_4x.png" alt="Cute kitten.">
-    <p>this is a cat</p>
+    <div class="source" contenteditable="true">Copy text from this box.</div>
+    <div class="target" contenteditable="true">And paste it into this one.</div>
+
 
     <script>
-        document.addEventListener("copy", async (e) => {
-            e.preventDefault();
-            try {
-                let clipboardItems = [];
-                clipboardItems.push(
-                    new ClipboardItem({
-                        [blob.type]: blob,
-                    })
-                );
-                await navigator.clipboard.write(clipboardItems);
-                console.log("Image copied, text ignored.");
-            } catch (err) {
-                console.error(err.name, err.message);
-            }
+        const source = document.querySelector('div.source');
+
+        source.addEventListener('copy', (event) => {
+            const selection = document.getSelection();
+            event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+            event.preventDefault();
         });
     </script>
 </body>
