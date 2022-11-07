@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/network', function () {
+    return view('network');
+})->name('network');
+Route::get('/vibrate', function () {
+    return view('vibrate');
+})->name('vibrate');
+
+Route::get('/battery', function () {
+    return view('battery');
+})->name('battery');
+
+Route::get('/geolocation', function () {
+    return view('geolocation');
+})->name('geolocation');
