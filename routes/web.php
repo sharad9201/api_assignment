@@ -30,3 +30,7 @@ Route::get('/battery', function () {
 Route::get('/geolocation', function () {
     return view('geolocation');
 })->name('geolocation');
+
+Route::get('/clip', function () {
+    return view('clip');
+})->name('clip');
